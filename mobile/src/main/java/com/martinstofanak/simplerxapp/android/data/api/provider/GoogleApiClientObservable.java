@@ -25,15 +25,15 @@ import timber.log.Timber;
  * Used from mcharmas/Android-ReactiveLocation
  */
 @Singleton
-public class GoogleApiClientProvider implements Observable.OnSubscribe<GoogleApiClient> {
+public class GoogleApiClientObservable implements Observable.OnSubscribe<GoogleApiClient> {
 
     private GoogleApiClient mClient;
     private WeakReference<Context> mContextRef;
     private List<Api <? extends Api.ApiOptions.NotRequiredOptions>> mApiServices;
 
 
-    @SafeVarargs public GoogleApiClientProvider(Context context,
-                                   Api<? extends Api.ApiOptions.NotRequiredOptions>... services) {
+    @SafeVarargs public GoogleApiClientObservable(Context context,
+                                                  Api<? extends Api.ApiOptions.NotRequiredOptions>... services) {
         mContextRef = new WeakReference<>(context);
         mApiServices = Arrays.asList(services);
     }
@@ -106,11 +106,7 @@ public class GoogleApiClientProvider implements Observable.OnSubscribe<GoogleApi
 
         @Override
         public void onConnected(Bundle bundle) {
-            try {
-                onGoogleApiClientReady(apiClient, observer);
-            } catch (Throwable ex) {
-                observer.onError(ex);
-            }
+            onGoogleApiClientReady(apiClient, observer);
         }
 
         @Override

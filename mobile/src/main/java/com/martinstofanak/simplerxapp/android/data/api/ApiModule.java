@@ -8,7 +8,7 @@ import android.net.NetworkInfo;
 import com.google.android.gms.location.LocationServices;
 import com.martinstofanak.simplerxapp.android.BuildConfig;
 import com.martinstofanak.simplerxapp.android.data.api.provider.AddressProvider;
-import com.martinstofanak.simplerxapp.android.data.api.provider.GoogleApiClientProvider;
+import com.martinstofanak.simplerxapp.android.data.api.provider.GoogleApiClientObservable;
 import com.martinstofanak.simplerxapp.android.data.api.provider.WeatherProvider;
 import com.martinstofanak.simplerxapp.android.data.api.services.WeatherService;
 import com.squareup.okhttp.OkHttpClient;
@@ -58,15 +58,15 @@ public class ApiModule {
 
 
     @Provides
-    @Singleton GoogleApiClientProvider provideGoogleApiClientProvider(Application app) {
-        return new GoogleApiClientProvider(app, LocationServices.API);
+    @Singleton GoogleApiClientObservable provideGoogleApiClientProvider(Application app) {
+        return new GoogleApiClientObservable(app, LocationServices.API);
     }
 
 
     @Provides
     @Singleton AddressProvider provideAddressProvider(Application app,
-                                                      GoogleApiClientProvider googleApiClientProvider) {
-        return new AddressProvider(app, googleApiClientProvider);
+                                                      GoogleApiClientObservable googleApiClientObservable) {
+        return new AddressProvider(app, googleApiClientObservable);
     }
 
 

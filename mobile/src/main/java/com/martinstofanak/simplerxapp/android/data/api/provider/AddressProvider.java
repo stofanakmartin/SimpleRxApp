@@ -29,14 +29,14 @@ public class AddressProvider {
     private static final int ADDRESS_MAX_RESULTS = 1;
 
     private WeakReference<Context> mContextRef;
-    private GoogleApiClientProvider mGoogleApiProvider;
+    private GoogleApiClientObservable mGoogleApiObservable;
     private AddressResult mAddressResult;
     private Observable<AddressResult> mAddressObservable;
 
 
-    public AddressProvider(Application app, GoogleApiClientProvider googleApiProvider) {
+    public AddressProvider(Application app, GoogleApiClientObservable googleApiObservable) {
         mContextRef = new WeakReference<Context>(app);
-        mGoogleApiProvider = googleApiProvider;
+        mGoogleApiObservable = googleApiObservable;
     }
 
 
@@ -48,7 +48,7 @@ public class AddressProvider {
     private Observable<AddressResult> loadLocation() {
 
         Observable<AddressResult> addressObservable = Observable
-                .create(mGoogleApiProvider)
+                .create(mGoogleApiObservable)
                 .flatMap(new Func1<GoogleApiClient, Observable<Location>>() {
                     @Override public Observable<Location> call(GoogleApiClient googleApiClient) {
                         return LocationObservable.createObservable(googleApiClient);
