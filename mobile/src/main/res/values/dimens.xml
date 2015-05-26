@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="today_divider_width">100dp</dimen>
+
+    <!-- Padding & margin -->
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_huge1">32dp</dimen>
+    <dimen name="margin_huge2">40dp</dimen>
+
+    <!-- Text -->
+    <dimen name="text_headline2">28dp</dimen>
+</resources>

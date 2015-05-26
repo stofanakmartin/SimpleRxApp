@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TodayImageStatView">
+        <attr name="iconResId" format="reference"/>
+        <attr name="textValue" format="string"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">SimpleRxApp</string>
+
+    <!-- Today -->
+    <string name="activity_title_today">Today</string>
+    <string name="loading_weather">Getting weather for you</string>
+
+    <!-- Errors -->
+    <string name="message_error_location">Cannot obtain location. Try again later.</string>
+    <string name="message_error_weather">We cannot get current weather. Try again later.</string>
+    <string name="message_error_no_connection">No internet connection</string>
+
+</resources>

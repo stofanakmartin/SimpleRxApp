@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#7C9FDB</color>
+    <color name="color_primary_dark">#6480AF</color>
+    <color name="color_accent">#7C9FDB</color>
+    <color name="color_white">#FFFFFF</color>
+
+    <color name="color_divider_black">#1f000000</color>
+    <color name="color_weather_state_overlay">#90ADDC</color>
+
+    <!-- Material colors -->
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+
+</resources>
